@@ -1,0 +1,58 @@
+/* Import the Google Font 'Lato' */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+/* Container styles */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: 'Lato';
+}
+.container {
+  padding: 15rem 0;
+  text-align: center;
+}
+.shape {
+  position: relative;
+  display: inline-block;
+  color: #f0001f;
+  font-size: 1.2em;
+  text-align: center;
+}
+/* END Container styles */
+/* Colors and positions for the graphics */
+.outer {
+  fill: transparent;
+  stroke: #f0001f;
+  stroke-width: 250;
+  stroke-dasharray: 554;
+  transition: stroke-dashoffset 3s;
+  -webkit-animation-play-state: running;
+  /* firefox bug fix - won't rotate at 90deg angles */
+  -moz-transform: rotate(-89deg) translateX(-190px);
+}
+/* END colors and graphic positions */
+/* Set the initial values for the animation */
+.shape[data-percent='50'] .outer {
+  stroke-dashoffset: 267;
+  -webkit-animation: show50 3s;
+  animation: show50 3s;
+}
+/* END set initial animation values */
+/* Keyframes for the initial animation */
+@-webkit-keyframes show50 {
+  from {
+    stroke-dashoffset: 537;
+  }
+  to {
+    stroke-dashoffset: 267;
+  }
+}
+
+@keyframes show50 {
+  from {
+    stroke-dashoffset: 537;
+  }
+  to {
+    stroke-dashoffset: 267;
+  }
+}
+/* END Keyframes for the initial animation */
